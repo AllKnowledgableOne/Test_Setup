@@ -1,0 +1,20 @@
+.button_container a{
+    font-size:14pt;
+    text-decoration:none;
+    color:black;
+    border: 3px solid darkblue;
+    background-color:lightblue;
+    border-radius:6px;
+    padding:6px;
+  }
+  .button_container{
+    width:100%;
+    margin:10px;
+    text-align:center;
+  }
+  body{
+    text-align:center;
+  }
+  input{
+    margin-bottom:10px;
+  }

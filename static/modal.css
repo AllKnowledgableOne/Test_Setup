@@ -1,0 +1,58 @@
+/* The Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 3px solid #888;
+    border-radius:6px;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  
+  /* The header */
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #8cc88c;
+    color: white;
+  }
+  
+  /* The footer */
+  .modal-footer {
+    padding: 10px 10px;
+    background-color: #8cc88c;
+    color: white;
+    text-align: right;
+  }
+  
+  /* The buttons */
+  .btn {
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .btn_save:hover {
+    background-color: #1C9F30; /* Green */
+    color: white;
+  }
+  
+  .btn_cancel:hover,.btn_remove:hover {
+    background-color: #f44336; /* Red */
+    color: white;
+  }
+  

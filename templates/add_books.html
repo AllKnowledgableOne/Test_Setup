@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Books</title>
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <div class="button_container">
+            <a href="/">Display Books</a>
+            <a href="/add_books_page">Add a Book</a>
+        </div><br>
+        <form action="/add_book_form" method="post">
+            <label for="book-title">Book Title:</label><br>
+            <input type="text" id="book_title" name="book_title" required><br>
+        
+            <label for="author">Author:</label><br>
+            <input type="text" id="author" name="author" required><br>
+
+            <label for="publisher">Publisher:</label><br>
+            <input type="text" id="publisher" name="publisher" required><br>
+            
+            <label for="genre">Genre:</label><br>
+            <input type="text" id="genre" name="genre" required><br>
+
+            <label for="type">Fiction/Non-Fiction:</label><br>
+            <input type="radio" id="fiction" name="type" value="Fiction" required>
+            <label for="fiction">Fiction</label>
+            <input type="radio" id="non_fiction" name="type" value="Non-Fiction" required>
+            <label for="non_fiction">Non-Fiction</label><br>
+            
+            <label for="ISBN">ISBN:</label><br>
+            <input type="text" id="ISBN" name="ISBN" required><br>
+            
+            <label for="quantity_remaining">Quantity Remaining:</label><br>
+            <input type="number" id="quantity_remaining" name="quantity_remaining" required min="0"><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

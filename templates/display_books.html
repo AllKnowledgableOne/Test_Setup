@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Display Books</title>
+        <link href="https://cdn.jsdelivr.net/npm/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="../static/modal.css">
+    </head>
+    <body>
+        
+        <div class="button_container">
+            <a href="/">Display Books</a>
+            <a href="/add_books_page">Add a Book</a>
+        </div>
+        <div id=table_container></div>
+
+        <!-- The Modal Form -->
+        <div id="editModal" class="modal">
+          <!-- Modal content -->
+          <div  class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn_close" onclick="closeModal()">&times;</button>
+              <h2>Edit Book</h2>
+            </div>
+            <div class="modal-body">
+              <form id="editForm" action="/edit_book_form" method="POST">
+                  <label style="display:none;" for="book_object">Book Object:</label><br>
+                    <input type="hidden" id="book_object" name="book_object" required><br>
+                  
+                  <label for="book-title">Book Title:</label><br>
+                  <input type="text" id="book_title" name="book_title" required><br>
+
+                  <label for="author">Author:</label><br>
+                  <input type="text" id="author" name="author" required><br>
+
+                  <label for="publisher">Publisher:</label><br>
+                  <input type="text" id="publisher" name="publisher" required><br>
+
+                  <label for="genre">Genre:</label><br>
+                  <input type="text" id="genre" name="genre" required><br>
+
+                  <label>Fiction/Non-Fiction:</label><br>
+                  <input type="radio" id="fiction" name="type" value="Fiction" required>
+                  <label for="fiction">Fiction</label>
+                  <input type="radio" id="non_fiction" name="type" value="Non-Fiction" required>
+                  <label for="non_fiction">Non-Fiction</label><br>
+
+                  <label for="ISBN">ISBN:</label><br>
+                  <input type="text" id="ISBN" name="ISBN" required><br>
+
+                  <label for="quantity_remaining">Quantity Remaining:</label><br>
+                  <input type="number" id="quantity_remaining" name="quantity_remaining" required min="0"><button onclick=changeQuantity(1)>Return Book</button>
+                  <button onclick=changeQuantity(-1)>Borrow Book</button><br>
+
+                <div class="modal-footer">
+                      <button type="button" class="btn_remove" onclick="removeBook()">Remove From Library</button>
+                  <button type="button" class="btn_cancel" onclick="closeModal()">Cancel</button>
+                  <input type="submit" class="btn_save" value="Save Edit">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tabulator-tables/dist/js/tabulator.min.js"></script>
+
+        <script>
+          var tabledata = {{ data | tojson | safe }};
+          console.log(tabledata)
+          var library_data = tabledata.library;
+          console.log(library_data)
+  
+          var table = new Tabulator("#table_container", {
+              data: library_data,
+              columns: [
+                  {title: "Book Title", field: "book_title", headerFilter: "input"},
+                  {title: "Author", field: "author", headerFilter: "input"},
+                  {title: "Publisher", field: "publisher", headerFilter: "input"},
+                  {title: "Genre", field: "genre", headerFilter: "input"},
+                  {title: "Type", field: "type", headerFilter: "input"},
+                  {title: "ISBN", field: "ISBN", headerFilter: "input"},
+                  {title: "Quantity Remaining", field: "quantity_remaining", headerFilter: "input"}
+              ]
+          });
+  
+          table.on("rowClick", (e, row) => openModal(e, row));
+      </script>
+
+        <script src="../static/display_script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+[
+    {
+        "book_title": "Journey Through the Stars",
+        "author": "Liam Taylor",
+        "publisher": "Cosmos Books",
+        "genre": "Science Fiction",
+        "type": "Fiction",
+        "ISBN": "978-1-23-456789-7",
+        "quantity_remaining": 2
+    },
+    {
+        "book_title": "Whispers of the Mind",
+        "author": "Evelyn Clarke",
+        "publisher": "Mindful Publishing",
+        "genre": "Psychology",
+        "type": "Non-Fiction",
+        "ISBN": "978-0-59-313913-2",
+        "quantity_remaining": 4
+    },
+    {
+        "book_title": "The Art of Cuisine",
+        "author": "Helena Smith",
+        "publisher": "Gourmet Reads",
+        "genre": "Cooking",
+        "type": "Non-Fiction",
+        "ISBN": "978-0-14-312779-hg",
+        "quantity_remaining": 6
+    },
+    {
+        "book_title": "The Lost Kingdom 2",
+        "author": "Daniel Green",
+        "publisher": "bfdgfgdfgdfgdfgdg",
+        "genre": "Fantasy",
+        "type": "Fiction",
+        "ISBN": "978-0-425-25667-0",
+        "quantity_remaining": 0
+    }
+]
